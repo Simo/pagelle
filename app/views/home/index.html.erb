@@ -1,0 +1,7 @@
+<% title "Pagelle di Stop&Pop"%>
+
+<% @pagelle.each do |f| %>
+	<div>
+		<%= link_to f.pubblicata, pagella_path(f.id) %>
+	</div>
+<% end %>

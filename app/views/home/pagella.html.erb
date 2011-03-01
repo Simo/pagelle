@@ -1,0 +1,7 @@
+<% title "Pagella del #{@pagella.pubblicata}" %>
+
+	<% @voti.each do |f| %>
+		<div>
+			<%= link_to 'VOTO', edit_vote_path(f.id)%> <%= f.voto %> - <%= f.note %>: <%= f.motivo %>
+		</div>
+	<%end%>

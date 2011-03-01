@@ -5,6 +5,7 @@ class VotesController < ApplicationController
 
   def show
     @vote = Vote.find(params[:id])
+    @pagelle = List.all
   end
 
   def new
@@ -23,6 +24,7 @@ class VotesController < ApplicationController
 
   def edit
     @vote = Vote.find(params[:id])
+    @pagelle = List.all
   end
 
   def update
