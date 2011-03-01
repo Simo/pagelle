@@ -1,13 +1,9 @@
 <%= form_for @vote do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :list_id %><br />
-    <%= f.text_field :list_id %>
+    <%= f.collection_select :list_id, @pagelle, :id, :pubblicata%>
   </p>
-  <p>
-    <%= f.label :voto %><br />
-    <%= f.text_field :voto %>
-  </p>
+  <p><%= f.select :voto, options_for_select(["1","2","3","4","5","6","7","8","9","10"], "1")  %></p>
   <p>
     <%= f.label :note %><br />
     <%= f.text_field :note %>
@@ -17,4 +13,5 @@
     <%= f.text_area :motivo %>
   </p>
   <p><%= f.submit %></p>
+  
 <% end %>

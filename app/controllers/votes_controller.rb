@@ -9,6 +9,7 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
+    @pagelle = List.all
   end
 
   def create

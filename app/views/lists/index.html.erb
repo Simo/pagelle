@@ -1,4 +1,4 @@
-<% title "Lists" %>
+<% title "Pagelle" %>
 
 <table>
   <tr>
@@ -7,11 +7,11 @@
   <% for list in @lists %>
     <tr>
       <td><%= list.pubblicata %></td>
-      <td><%= link_to "Show", list %></td>
-      <td><%= link_to "Edit", edit_list_path(list) %></td>
-      <td><%= link_to "Destroy", list, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Mostra", list %></td>
+      <td><%= link_to "Edita", edit_list_path(list) %></td>
+      <td><%= link_to "Cancella", list, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New List", new_list_path %></p>
+<p><%= link_to "Nuova Pagella", new_list_path %></p>
