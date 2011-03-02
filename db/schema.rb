@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110228111439) do
+ActiveRecord::Schema.define(:version => 20110302105539) do
+
+  create_table "levels", :force => true do |t|
+    t.integer  "livello"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "lists", :force => true do |t|
     t.date     "pubblicata"
