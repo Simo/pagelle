@@ -14,7 +14,7 @@ class ListsController < ApplicationController
   def create
     @list = List.new(params[:list])
     if @list.save
-      redirect_to @list, :notice => "Successfully created list."
+      redirect_to @list, :notice => "Pagella creata."
     else
       render :action => 'new'
     end
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     if @list.update_attributes(params[:list])
-      redirect_to @list, :notice  => "Successfully updated list."
+      redirect_to @list, :notice  => "Pagella modificata."
     else
       render :action => 'edit'
     end
@@ -36,6 +36,6 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to lists_url, :notice => "Successfully destroyed list."
+    redirect_to lists_url, :notice => "Pagella cancellata."
   end
 end
