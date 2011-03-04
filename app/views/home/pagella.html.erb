@@ -1,7 +1,8 @@
 <% title "Pagella del #{@pagella.pubblicata}" %>
 
 	<% @voti.each do |f| %>
-		<div>
-			<%= link_to 'VOTO', edit_vote_path(f.id)%> <%= f.voto %> - <%= f.note %>: <%= f.motivo %>
+		<div id="voto_<%=f.id%>">
+			<%= link_to 'VOTO', edit_vote_path(f.id, :format => :js), :remote => true, :link => edit_vote_path(f.id) %> <%= f.voto %> - <%= f.note %>: <%= f.motivo %>
 		</div>
 	<%end%>
+	<div id="voto"> c</div>

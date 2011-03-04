@@ -9,7 +9,6 @@ class HomeController < ApplicationController
 			@pagella = List.find(params[:id])
 			@voti = @pagella.votes.order(:voto).reverse
 		end
-		
 	end
 	
 end
