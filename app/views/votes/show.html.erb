@@ -20,5 +20,6 @@
 <p>
   <%= link_to "Edit", edit_vote_path(@vote) %> |
   <%= link_to "Destroy", @vote, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", votes_path %>
+  <%= link_to "View All", votes_path %> |
+  <%= link_to "Torna alla pagella", pagella_path(@vote.list_id)%>
 </p>
