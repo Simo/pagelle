@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+  	<th>ID</th>
     <th>List</th>
     <th>Voto</th>
     <th>Note</th>
@@ -9,6 +10,7 @@
   </tr>
   <% for vote in @votes %>
     <tr>
+      <td><%= vote.id %></td>
       <td><%= vote.list_id %></td>
       <td><%= vote.voto %></td>
       <td><%= vote.note %></td>

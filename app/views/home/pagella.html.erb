@@ -4,12 +4,7 @@
 		<%= link_to "Aggiungi un nuovo voto", new_vote_path(:list_id => @pagella.id), :remote => true %>
 	<% else %>
 	
-		<% @voti.each do |f| %>
-			<div id="voto_<%=f.id%>">
-				<%= link_to 'VOTO', edit_vote_path(f.id), :remote => true %>
-				<%= f.level_id %> - <%= f.note %>: <%= f.motivo %>
-			</div>
-		<%end%>
+		<div id="lista"><%= render :partial => 'voti'%></div>
 		
 	<% end %>
 	</div>

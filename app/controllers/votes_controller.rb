@@ -39,7 +39,7 @@ class VotesController < ApplicationController
   def update
     @vote = Vote.find(params[:id])
     if @vote.update_attributes(params[:vote])
-      redirect_to @vote, :notice  => "Voto aggiornato."
+    	redirect_to pagella_path(params[:vote][:list_id]), :format => :js
     else
       render :action => 'edit'
     end
