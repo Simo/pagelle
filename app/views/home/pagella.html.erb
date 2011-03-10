@@ -3,7 +3,8 @@
 	<% if @voti.empty? %>
 		<%= link_to "Aggiungi un nuovo voto", new_vote_path(:list_id => @pagella.id), :remote => true %>
 	<% else %>
-	
+		
+		<div id="menu"><%= link_to "Aggiungi un nuovo voto", new_vote_path(:list_id => @pagella.id), :remote => true%></div>
 		<div id="lista"><%= render :partial => 'voti'%></div>
 		
 	<% end %>

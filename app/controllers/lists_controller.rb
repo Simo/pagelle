@@ -14,7 +14,7 @@ class ListsController < ApplicationController
   def create
     @list = List.new(params[:list])
     if @list.save
-      redirect_to @list, :notice => "Pagella creata."
+      redirect_to root_path, :notice => 'Pagella creata'
     else
       render :action => 'new'
     end
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     if @list.update_attributes(params[:list])
-      redirect_to @list, :notice  => "Pagella modificata."
+      redirect_to root_path, :notice => 'Pagella aggiornata'
     else
       render :action => 'edit'
     end

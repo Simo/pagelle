@@ -1,7 +1,7 @@
 <% title "Pagelle di Stop&Pop"%>
 
-<% @pagelle.each do |f| %>
-	<div>
-		<%= link_to f.pubblicata, pagella_path(f.id) %>
-	</div>
-<% end %>
+<div id="nav"><%= link_to "Nuova pagella", new_list_path, :remote => true %></div>
+<div id="pagelle">
+	<%= render :partial => 'pagelle' %>
+</div>
+<div id="inserisci_pagella"></div>
