@@ -1,5 +1,8 @@
 <%= form_for @vote do |f| %>
   <%= f.error_messages %>
+  <p><%= f.label :Pagella%>
+  	<%= f.collection_select :list_id, @pagelle, :id, :pubblicata%>
+  </p>
   <p>
   	<%= f.label :voto%><br />
   	<%= f.collection_select :level_id, @livelli, :id, :livello%>

@@ -17,6 +17,8 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
+    @vote.list_id = params[:list_id]
+    
     @pagelle = List.all
     @livelli = Level.all
   end
