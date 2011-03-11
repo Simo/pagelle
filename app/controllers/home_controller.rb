@@ -7,8 +7,14 @@ class HomeController < ApplicationController
 	def pagella
 		if params[:id]
 			@pagella = List.find(params[:id])
-			@voti = @pagella.votes.order(:voto).reverse
+			@voti = @pagella.votes.order(:level_id).reverse
 		end
+		
+		respond_to do |format|
+			format.html
+			format.js {render :layout => false}
+		end
+		
 	end
 	
 end

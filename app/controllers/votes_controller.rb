@@ -26,7 +26,11 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     if @vote.save
-      redirect_to pagella_path(params[:vote][:list_id]), :format => :js, :notice => "Nuovo voto inserito"
+    	@voti = Vote.where(:list_id => params[:vote][:list_id]).order(:level_id).reverse
+    	respond_to do |format|
+    		format.html {redirect_to pagella_path(params[:vote][:list_id]), :notice => "Nuovo voto inserito"}
+    		format.js
+    	end
     else
       render :action => 'new'
     end
@@ -39,9 +43,13 @@ class VotesController < ApplicationController
   def update
     @vote = Vote.find(params[:id])
     if @vote.update_attributes(params[:vote])
-    	redirect_to pagella_path(params[:vote][:list_id]), :format => :js, :notice => "Voto modificato"
+    	@voti = Vote.where(:list_id => params[:vote][:list_id]).order(:level_id).reverse
+    	respond_to do |format|
+    		format.html {redirect_to pagella_path(params[:vote][:list_id]), :notice => "Voto aggiornato"}
+    		format.js
+    	end
     else
-      render :action => 'edit'
+    	render :action => 'edit'
     end
   end
 
