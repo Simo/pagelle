@@ -1,0 +1,5 @@
+<% @pagelle.each do |f| %>
+	<div>
+		<%= link_to f.pubblicata, pagella_path(f.id) %> | <%= link_to "modifica", edit_list_path(f.id),:remote => true%>
+	</div>
+<% end %>
