@@ -1,10 +1,13 @@
-<%= form_for @vote do |f| %>
+<%= form_for @vote, :remote => true do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.collection_select :list_id, @pagelle, :id, :pubblicata%>
+  <p><%= f.label :Pagella%>
+  	<%= f.collection_select :list_id, @pagelle, :id, :pubblicata%>
   </p>
-  <p><%= f.select :voto, options_for_select(["1","2","3","4","5","6","7","8","9","10"], "1")  %></p>
   <p>
+  	<%= f.label :voto%><br />
+  	<%= f.collection_select :level_id, @livelli, :id, :livello%>
+  	</p>
+ <p>
     <%= f.label :note %><br />
     <%= f.text_field :note %>
   </p>
@@ -12,6 +15,6 @@
     <%= f.label :motivo %><br />
     <%= f.text_area :motivo %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit%></p>
   
 <% end %>

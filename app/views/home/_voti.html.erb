@@ -1,0 +1,6 @@
+<% @voti.each do |f| %>
+	<div id="voto_<%=f.id%>">
+		<%= link_to 'VOTO', edit_vote_path(f.id), :remote => true %>
+		<%= f.level_id %> - <%= f.note %>: <%= f.motivo %>
+	</div>
+<% end %>
